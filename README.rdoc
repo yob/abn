@@ -1,0 +1,16 @@
+A small class for validating Australian Business Numbers (ABN)
+
+= Usage
+
+  ABN.new("12042168743").valid?
+  => true
+
+  ABN.valid_abn?("12042168743")
+  => true
+
+  ABN.valid_abn?("12042168744")
+  => false
+
+= Further Reader
+
+- http://www.clearwater.com.au/?action=code
