@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.has_rdoc          = true
   s.rdoc_options     << "--title" << "ABN" <<
                         "--line-numbers"
-  s.test_files        = FileList["spec/**/*_spec.rb"]
-  s.files             = FileList[ "lib/**/*.rb", "MIT-LICENSE", "README.rdoc" ]
+  s.test_files        = Dir.glob("spec/**/*_spec.rb")
+  s.files             = Dir.glob("lib/**/*.rb") + ["MIT-LICENSE", "README.rdoc"]
 end
