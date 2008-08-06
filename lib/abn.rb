@@ -26,12 +26,11 @@ class ABN
 
     weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
     sum = 0
-    idx = 0
-    abn.each_char do |c|
+    (0..10).each do |idx|
+      c = abn[idx,1]
       idx == 0 ? sub = 1 : sub = 0
       digit = c.to_i - sub
       sum += weights[idx] * digit
-      idx += 1
     end
     
     sum % 89 == 0 ? true : false
