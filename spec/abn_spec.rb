@@ -16,7 +16,7 @@ describe "The ABN class" do
   end
   
   it "should have a problem with a pre-formatted invalid ABN" do
-    ABN.valid?("12 042 168 744")
+    ABN.valid?("12 042 168 744").should be_false
   end
   
   it "should have a problem with an invalid ABN" do

@@ -1,0 +1,8 @@
+v1.2
+- Merged some cleanup and safety patches by Bodaniel Jeanes
+
+v1.1
+- Small tweak to add compatability with MRI < 1.8.7
+
+v1.0
+- Initial Release

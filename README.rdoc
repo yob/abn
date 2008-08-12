@@ -1,6 +1,12 @@
 A small class for validating Australian Business Numbers (ABN)
 
+= Installation
+
+  gem install yob-abn --source http://gems.github.com/
+
 = Usage
+
+  require 'abn'
 
   ABN.new("12042168743").valid?
   => true
@@ -11,6 +17,6 @@ A small class for validating Australian Business Numbers (ABN)
   ABN.valid_abn?("12042168744")
   => false
 
-= Further Reader
+= Further Reading
 
 - http://www.clearwater.com.au/?action=code
