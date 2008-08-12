@@ -6,10 +6,6 @@ class ABN
     Tiny  = 0
     
     String = [Major, Minor, Tiny].join('.')
-    
-    def self.to_s
-      String
-    end
   end
 
   def initialize(num)
