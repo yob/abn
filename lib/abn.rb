@@ -13,7 +13,7 @@ class ABN
   end
 
   def valid?
-    return false unless @number && @number.length == 11
+    return false unless @number.length == 11
 
     weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
     sum = 0
