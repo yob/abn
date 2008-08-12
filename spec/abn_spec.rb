@@ -9,15 +9,38 @@ describe "The ABN class" do
     ABN.valid?(12042168743).should   be_true
   end
   
-  it "should identify an invalid ABN" do
-    ABN.valid?(nil).should       be_false
+  it "should identify a preformatted valid ABN" do 
+    ABN.valid?("12 042 168 743").should be_true
+  end
+  
+  it "should have a problem with a pre-formatted invalid ABN" do
+    ABN.valid?("12 042 168 744")
+  end
+  
+  it "should have a problem with an invalid ABN" do
+    ABN.valid?("12042168744").should be_false
     ABN.valid?("902865").should  be_false
+  end
+  
+  it "should have a problem with invalid parameters" do
+    ABN.valid?(nil).should       be_false
     ABN.valid?(Array).should     be_false
     ABN.valid?(Array.new).should be_false
   end
 
-  it "should be able to pretty print a valid ABN" do
+  it "should be able to format a valid ABN" do
     ABN.new("12042168743").to_s.should eql("12 042 168 743")
   end
+  
+  it "should be able to return a pre-formatted ABN" do
+    ABN.new("12 042 168 743").to_s.should eql("12 042 168 743")
+  end
+  
+  it "should not format an invalid ABN" do
+    ABN.new("12042168744").to_s.should eql("")
+  end
 
+  it "should not format an pre-formatted invalid ABN" do
+    ABN.new("12 042 168 744").to_s.should eql("")
+  end
 end
