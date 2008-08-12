@@ -31,7 +31,7 @@ class ABN
   end
 
   def to_s
-    valid? ? "%s %s %s %s" % [@number[0,2], @number[2,3], @number[5,3], @number[8,3]] : ""
+    valid? ? "%s%s %s%s%s %s%s%s %s%s%s" % @number.split('') : ""
   end
 
   def self.valid?(abn)
