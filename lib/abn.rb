@@ -23,8 +23,7 @@ class ABN
     sum = 0
     (0..10).each do |i|
       c = @number[i,1]
-      sub = i.zero? ? 1 : 0
-      digit = c.to_i - sub
+      digit = c.to_i - (i.zero? ? 1 : 0)
       sum += weights[i] * digit
     end
     
