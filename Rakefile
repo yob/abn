@@ -12,7 +12,7 @@ require 'abn'
 desc "Default: run specs"
 task :default => :spec
 
-desc "Run all the specs for the notamock plugin."
+desc "Run all the specs for the ABN library."
 Spec::Rake::SpecTask.new do |t|
   t.spec_files = FileList['spec/**/*_spec.rb']
   t.spec_opts = ['--colour']
@@ -20,7 +20,7 @@ Spec::Rake::SpecTask.new do |t|
   t.rcov_opts = ["--exclude \"spec/*,gems/*\""]
 end
 
-desc "Generate documentation for the notamock plugin."
+desc "Generate documentation for the ABN library."
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'ABN'

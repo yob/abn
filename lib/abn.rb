@@ -6,18 +6,14 @@ class ABN
     Tiny  = 0
     
     String = [Major, Minor, Tiny].join('.')
-    
-    def self.to_s
-      String
-    end
   end
 
   def initialize(num)
-    @number = num.to_s.tr ' ',''
+    @number = num.to_s.tr ' ','' if [String, Bignum].include? num.class
   end
 
   def valid?
-    return false unless @number.length == 11
+    return false unless @number && @number.length == 11
 
     weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
     sum = 0
@@ -31,7 +27,7 @@ class ABN
   end
 
   def to_s
-    valid? ? "%s %s %s %s" % [@number[0,2], @number[2,3], @number[5,3], @number[8,3]] : ""
+    valid? ? "%s%s %s%s%s %s%s%s %s%s%s" % @number.split('') : ""
   end
 
   def self.valid?(abn)
