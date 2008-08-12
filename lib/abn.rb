@@ -9,7 +9,7 @@ class ABN
   end
 
   def initialize(num)
-    @number = num.to_s.tr ' ','' if [String, Bignum].include? num.class
+    @number = num.to_s.tr ' ',''
   end
 
   def valid?
