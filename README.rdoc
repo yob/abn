@@ -2,7 +2,7 @@ A small class for validating Australian Business Numbers (ABN)
 
 = Installation
 
-  gem install yob-abn --source http://gems.github.com/
+  gem install abn
 
 = Usage
 
