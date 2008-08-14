@@ -33,7 +33,7 @@ end
 PKG_NAME           = "abn"
 PKG_VERSION        = ABN::Version::String
 PKG_FILE_NAME      = "#{PKG_NAME}-#{PKG_VERSION}"
-RUBY_FORGE_PROJECT = "abn"
+RUBY_FORGE_PROJECT = "yob-projects"
 
 spec = Gem::Specification.new do |s|
   s.name              = PKG_NAME

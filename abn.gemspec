@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.homepage          = "http://github.com/yob/abn/tree/master"
   s.has_rdoc          = true
   s.rdoc_options      << "--title" << "ABN" << "--line-numbers"
+  s.rubyforge_project = "yob-projects"
   s.test_files        = [ "spec/abn_spec.rb" ]
   s.files             = [ "lib/abn.rb", "MIT-LICENSE", "README.rdoc" ]
 end
