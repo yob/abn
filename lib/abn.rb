@@ -4,7 +4,7 @@ class ABN
     Major = 1
     Minor = 3
     Tiny  = 0
-    
+
     String = [Major, Minor, Tiny].join('.')
   end
 
@@ -27,7 +27,7 @@ class ABN
       digit = c.to_i - (i.zero? ? 1 : 0)
       sum += weights[i] * digit
     end
-    
+
     sum % 89 == 0 ? true : false
   end
 
@@ -53,8 +53,8 @@ module ABNValidations
 
 
   # Validates whether the value of the specified attribute conforms to the Australian Business Number (ABN) format.
-  # 
-  # +validates_abn_correctness_of+ will automatically non-destructively strip any formatting and whitespace before 
+  #
+  # +validates_abn_correctness_of+ will automatically non-destructively strip any formatting and whitespace before
   # validation
   def validates_abn_correctness_of(*args)
 
@@ -67,7 +67,7 @@ module ABNValidations
 
       # get our raw value (ie, what was last sent to the instance...)
       raw_value = instance.send("#{attr_name}_before_type_cast") || value
-    
+
       # skip our processing if we've got a legal nil...
       next if (configuration[:allow_nil] and raw_value.nil?)
 
