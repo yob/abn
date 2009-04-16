@@ -1,3 +1,6 @@
+v1.3
+- [Dan Cheail] Added an ActiveRecord validation macro, validates_abn_correctness_of
+
 v1.2
 - Merged some cleanup and safety patches by Bodaniel Jeanes
 
