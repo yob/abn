@@ -4,13 +4,13 @@ Gem::Specification.new do |s|
   s.summary           = "a (very) small library for working with Australian Business Numbers."
   s.description       = "a (very) small library for working with Australian Business Numbers."
   s.author            = "James Healy"
-  s.email             = "jimmy@deefa.com"
-  s.homepage          = "http://github.com/yob/abn/tree/master"
+  s.email             = ["jimmy@deefa.com"]
+  s.homepage          = "http://github.com/yob/abn"
   s.has_rdoc          = true
   s.rdoc_options      << "--title" << "ABN" << "--line-numbers"
   s.rubyforge_project = "yob-projects"
   s.test_files        = [ "spec/abn_spec.rb" ]
-  s.files             = [ "lib/abn.rb", "MIT-LICENSE", "README.rdoc" ]
+  s.files             = [ "lib/abn.rb", "CHANGELOG","MIT-LICENSE", "README.rdoc" ]
 
   s.add_development_dependency("rake")
   s.add_development_dependency("rcov")
