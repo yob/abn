@@ -1,3 +1,10 @@
+v2.0.0
+- remove ActiveRecord validation macro, it gets messy to maintain
+  support for AR 2.x and 3.x so I opted to keep things simple and
+  remove it
+- modernise package - clean out the Rakefile, use bundler for load
+  path management, etc.
+
 v1.3
 - [Dan Cheail] Added an ActiveRecord validation macro, validates_abn_correctness_of
 
