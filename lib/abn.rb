@@ -1,8 +1,8 @@
 class ABN
 
   module Version #:nodoc:
-    Major = 1
-    Minor = 3
+    Major = 2
+    Minor = 0
     Tiny  = 0
 
     String = [Major, Minor, Tiny].join('.')
@@ -42,42 +42,4 @@ class ABN
   def self.valid?(abn)
     new(abn).valid?
   end
-end
-
-module ABNValidations
-  class << self
-    def enable
-      ActiveRecord::Base.extend ABNValidations
-    end
-  end
-
-
-  # Validates whether the value of the specified attribute conforms to the Australian Business Number (ABN) format.
-  #
-  # +validates_abn_correctness_of+ will automatically non-destructively strip any formatting and whitespace before
-  # validation
-  def validates_abn_correctness_of(*args)
-
-    # Set up our configuration for this validation
-    configuration = { :on => :save, :allow_nil => false, :message => "is not a valid ABN" }
-    configuration.update(args.extract_options!)
-
-    # iterate through each field we've set up to validate the local numericality of
-    validates_each(args, configuration) do |instance, attr_name, value|
-
-      # get our raw value (ie, what was last sent to the instance...)
-      raw_value = instance.send("#{attr_name}_before_type_cast") || value
-
-      # skip our processing if we've got a legal nil...
-      next if (configuration[:allow_nil] and raw_value.nil?)
-
-      unless ABN.valid?(raw_value)
-        instance.errors.add(attr_name, configuration[:message])
-      end
-    end
-  end
-end
-
-if defined?(ActiveRecord)
-  ABNValidations.enable
 end

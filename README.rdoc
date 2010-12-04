@@ -19,21 +19,26 @@ A small library for validating Australian Business Numbers (ABN)
 
 == With ActiveRecord
 
-The gem includes a simple ActiveRecord method to validate your model attributes
-and ensure they're a valid ABN.
+Version 1.3 of this gem had an active record mixin for validating ABN fields in
+models. I removed it in version 2.0 to avoid complications of supporting active
+record 2.x and 3.x.
 
-Start by loading the gem in your app. In Rails 2.1 or higher, the best place to
-do this is in config/environment.rb
+To validate an ABN field in your model add the ABN gem to your Gemfile and
+use the following pattern:
 
-    config.gem "abn", :version => "1.3.0"
+  class Business < ActiveRecord::Base
 
-Then just add the follow line to your model:
+    validate :validate_abn
 
-    validates_abn_correctness_of :abn
+    private
 
-If you want to allow empty values, then the standard option for that works:
-
-    validates_abn_correctness_of :abn, :allow_nil => true
+    def validate_abn
+      if self.abn.present && !ABN.valid?(self.abn)
+        self.errors.add(:abn, "is not a valid ABN")
+        false
+      end
+    end
+  end
 
 = Further Reading
 
