@@ -4,7 +4,7 @@ Bundler.setup
 
 require "abn"
 
-describe "The ABN class" do
+describe ABN, "valid? class method" do
   it "should identify a valid ABN" do
     ABN.valid?("12042168743").should be_true
     ABN.valid?(12042168743).should   be_true
@@ -34,7 +34,9 @@ describe "The ABN class" do
     bad_parameter.length.should eql(11)
     ABN.valid?(bad_parameter).should be_false
   end
+end
 
+describe ABN, "to_s instance method" do
   it "should be able to format a valid ABN" do
     ABN.new("12042168743").to_s.should eql("12 042 168 743")
   end
