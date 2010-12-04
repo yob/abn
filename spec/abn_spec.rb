@@ -1,7 +1,8 @@
-$LOAD_PATH << File.dirname(__FILE__) + "/../lib"
+require "rubygems"
+require "bundler"
+Bundler.setup
 
-require 'spec'
-require 'abn'
+require "abn"
 
 describe "The ABN class" do
   it "should identify a valid ABN" do

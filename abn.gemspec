@@ -11,4 +11,9 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "yob-projects"
   s.test_files        = [ "spec/abn_spec.rb" ]
   s.files             = [ "lib/abn.rb", "MIT-LICENSE", "README.rdoc" ]
+
+  s.add_development_dependency("rake")
+  s.add_development_dependency("rcov")
+  s.add_development_dependency("roodi")
+  s.add_development_dependency("rspec", "~>2.0")
 end
