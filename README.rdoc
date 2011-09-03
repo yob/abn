@@ -21,7 +21,7 @@ A small library for validating Australian Business Numbers (ABN)
 
 Version 1.3 of this gem had an active record mixin for validating ABN fields in
 models. I removed it in version 2.0 to avoid complications of supporting active
-record 2.x and 3.x.
+record 2.x and 3.x (and Datamapper, Mongoid, etc).
 
 To validate an ABN field in your model add the ABN gem to your Gemfile and
 use the following pattern:
