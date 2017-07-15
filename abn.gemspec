@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.rdoc_options      << "--title" << "ABN" << "--line-numbers"
   s.rubyforge_project = "yob-projects"
   s.test_files        = [ "spec/abn_spec.rb" ]
-  s.files             = [ "lib/abn.rb", "CHANGELOG","MIT-LICENSE", "README.rdoc" ]
+  s.files             = [ "lib/abn.rb", "CHANGELOG","MIT-LICENSE", "README.markdown" ]
 
   s.required_ruby_version = ">=1.9.3"
 
