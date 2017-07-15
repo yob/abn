@@ -2,7 +2,7 @@ class ABN
 
   module Version #:nodoc:
     Major = 2
-    Minor = 0
+    Minor = 1
     Tiny  = 0
 
     String = [Major, Minor, Tiny].join('.')
