@@ -1,7 +1,3 @@
-require "rubygems"
-require "bundler"
-Bundler.setup
-
 require "abn"
 
 describe ABN, "valid? class method" do
