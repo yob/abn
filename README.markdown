@@ -1,23 +1,23 @@
 A small library for validating Australian Business Numbers (ABN)
 
-= Installation
+# Installation
 
-  gem install abn
+    gem install abn
 
-= Usage
+# Usage
 
-  require 'abn'
+    require 'abn'
 
-  ABN.new("12042168743").valid?
-  => true
+    ABN.new("12042168743").valid?
+    => true
 
-  ABN.valid?("12042168743")
-  => true
+    ABN.valid?("12042168743")
+    => true
 
-  ABN.valid?("12042168744")
-  => false
+    ABN.valid?("12042168744")
+    => false
 
-== With ActiveRecord
+## With ActiveRecord
 
 Version 1.3 of this gem had an active record mixin for validating ABN fields in
 models. I removed it in version 2.0 to avoid complications of supporting active
@@ -40,6 +40,7 @@ use the following pattern:
     end
   end
 
-= Further Reading
+# Further Reading
 
-- http://www.clearwater.com.au/?action=code
+- http://www.clearwater.com.au/code
+- https://en.wikipedia.org/wiki/Australian_Business_Number
