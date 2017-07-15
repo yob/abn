@@ -17,11 +17,4 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = ['--colour']
 end
 
-desc "Run all the specs for the ABN library with rcov"
-RSpec::Core::RakeTask.new(:rcov) do |t|
-  t.rspec_opts = ['--colour']
-  t.rcov        = true
-  t.rcov_opts   = ["--exclude /var", "--exclude spec"]
-end
-
 RoodiTask.new 'roodi', ['lib/**/*.rb']
