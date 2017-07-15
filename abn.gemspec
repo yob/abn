@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.files             = [ "lib/abn.rb", "CHANGELOG","MIT-LICENSE", "README.rdoc" ]
 
   s.add_development_dependency("rake")
-  s.add_development_dependency("rspec", "~>2.0")
+  s.add_development_dependency("rspec", "~>3.0")
 end
