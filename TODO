@@ -1,3 +1,0 @@
-- Ability to look up details of an ABN or run more accurate validation using the XMLWebService (wsdl yuck!) (http://www.programmableweb.com/api/australian-business-number-lookup [SOAP/REST aparently])
-  - http://abr.business.gov.au/abrxmlsearch/abrxmlsearch.asmx
-  - http://abr.business.gov.au/abrxmlsearchRPC/abrxmlsearch.asmx
