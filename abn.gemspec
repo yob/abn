@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "abn"
-  s.version           = "2.1.0"
+  s.version           = "2.1.1"
   s.summary           = "a (very) small library for working with Australian Business Numbers."
   s.description       = "a (very) small library for working with Australian Business Numbers."
   s.license           = "MIT"
