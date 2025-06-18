@@ -26,19 +26,20 @@ record 2.x and 3.x (and Datamapper, Mongoid, etc).
 To validate an ABN field in your model add the ABN gem to your Gemfile and
 use the following pattern:
 
-  class Business < ActiveRecord::Base
+```ruby
+class Business < ActiveRecord::Base
+  validate :validate_abn
 
-    validate :validate_abn
+  private
 
-    private
-
-    def validate_abn
-      if self.abn.present && !ABN.valid?(self.abn)
-        self.errors.add(:abn, "is not a valid ABN")
-        false
-      end
+  def validate_abn
+    if self.abn.present && !ABN.valid?(self.abn)
+      self.errors.add(:abn, "is not a valid ABN")
+      false
     end
   end
+end
+```
 
 # Further Reading
 
